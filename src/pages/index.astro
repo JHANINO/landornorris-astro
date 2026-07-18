@@ -1,0 +1,21 @@
+---
+// Konten head & body disimpan sebagai fragmen HTML mentah (bukan template .astro)
+// karena berisi inline script Webflow dengan banyak karakter { } yang akan
+// salah diparse sebagai ekspresi Astro. set:html menyuntikkannya apa adanya.
+import headHtml from '../fragments/head.html?raw';
+import bodyHtml from '../fragments/body.html?raw';
+---
+
+<html
+  data-wf-domain="landonorris.com"
+  data-wf-page="67b5a02dc5d338960b17a7eb"
+  data-wf-site="67b5a02dc5d338960b17a7e9"
+  lang="en"
+>
+  <head>
+    <Fragment set:html={headHtml} />
+  </head>
+  <body data-edit="">
+    <Fragment set:html={bodyHtml} />
+  </body>
+</html>
